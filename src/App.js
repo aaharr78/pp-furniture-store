@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import{ Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getUser } from './redux/reducers/user'
-// import LandingPage from './components/LandingPage'
+
+import LandingPage from './components/LandingPage'
 import Navbar from './components/Navbar'
 import Login from './components/Login'
+import Header from './components/Header'
 
 class App extends Component {
-  componentDidMount(){
+  componentDidMount() {
     this.props.getUser()
   }
 
@@ -17,15 +19,17 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
+        <Header />
+        <LandingPage />
         <div>
-          <Route path="/" component={Login} />
+          <Route path="/login" component={Login} />
         </div>
       </div>
-      
-       
-      
+
+
+
     );
   }
 }
 
-export default connect(null, {getUser})(App);
+export default connect(null, { getUser })(App);

@@ -10,5 +10,5 @@ class LandingPage extends Component {
         )
     }
 }
-l
+
 export default LandingPage

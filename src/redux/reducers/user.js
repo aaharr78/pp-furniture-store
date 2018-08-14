@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const GET_USER = 'GET_USER'
-const GET_USER_FULFILLED = 'GET_USER_FULFILLED'
+const GET_USER_FULFULLED = 'GET_USER_FULFILLED'
 
 const LOGOUT_USER = 'LOGOUT_USER'
 const LOGOUT_USER_FULFILLED = 'LOGOUT_USER_FULFILLED'
@@ -12,12 +12,12 @@ let initialState = {
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
-        case GET_USER_FULFILLED:
+        case GET_USER_FULFULLED:
             return { ...state, data: action.payload.data }
             case LOGOUT_USER_FULFILLED:
-            return { ...state, data: null}
+            return { ...state, data: null }
         default:
-            return state
+        return state
     }
 }
 
