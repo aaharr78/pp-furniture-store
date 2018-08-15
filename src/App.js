@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getUser } from './redux/reducers/user'
 
@@ -32,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, { getUser })(App);
+export default withRouter(connect(null, { getUser })(App));

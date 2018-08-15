@@ -9,6 +9,7 @@ const app = express()
 const port = 4007
 
 const AuthCtrl = require('./controllers/AuthCtrl')
+const CartCtrl = require('./controllers/CartCtrl')
 
 massive(process.env.CONNECTION_STRING).then( db => {
     app.set('db', db)
