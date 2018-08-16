@@ -34,6 +34,14 @@ app.get('/api/logout', (req,res) => {
     res.sendStatus(200)
 })
 
+app.get('/api/products', CartCtrl.getProducts)
+
+app.get('/api/cart', CartCtrl.getCart)
+app.post('/api/cart/:id', CartCtrl.addToCart)
+app.put('/api/cart/:id', CartCtrl.updateQuantity)
+app.delete('/api/cart/:id', CartCtrl.deleteFromCart)
+app.delete('/api/checkout', CartCtrl.checkout)
+
 
 app.listen(port, () => {
     console.log('listening on port:', port)

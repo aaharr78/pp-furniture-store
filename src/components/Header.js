@@ -13,7 +13,7 @@ function Header(props) {
 let mapStateToProps = state => {
     console.log(11, state)
     return {
-        user: state.data
+        user: state.user.data
     }
 }
 

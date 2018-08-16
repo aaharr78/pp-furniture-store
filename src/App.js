@@ -4,15 +4,20 @@ import './App.css';
 import { Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getUser } from './redux/reducers/user'
+import { getCart, getProducts} from './redux/reducers/cart'
 
 import LandingPage from './components/LandingPage'
 import Navbar from './components/Navbar'
 import Login from './components/Login'
 import Header from './components/Header'
+import Cart from './components/Cart'
+import ProductList from './components/ProductList'
 
 class App extends Component {
   componentDidMount() {
     this.props.getUser()
+    this.props.getProducts()
+    this.props.getCart()
   }
 
   render() {
@@ -21,6 +26,8 @@ class App extends Component {
         <Navbar />
         <Header />
         <LandingPage />
+        <Cart />
+        <ProductList />
         <div>
           <Route path="/login" component={Login} />
         </div>
@@ -32,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(connect(null, { getUser })(App));
+export default withRouter(connect(null, { getUser, getCart, getProducts })(App));
