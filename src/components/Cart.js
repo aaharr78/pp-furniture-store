@@ -26,6 +26,7 @@ class Cart extends Component {
                     <h4>{item.name}</h4>
                     <p>${item.price} each</p>
                     <p>Quantity: {item.quantity}</p>
+                    <img src={item.picture} alt="product"/>
                     <button onClick={() => this.updateQuantity(item.id, 'up', item.quantity)}>▲ </button>
                     <button onClick={() => this.updateQuantity(item.id, 'down', item.quantity)}>▼</button>
                     <br/>
@@ -47,7 +48,6 @@ class Cart extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(1111111, state)
     return {
         cart: state.cart.cart
     }

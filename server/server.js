@@ -37,7 +37,7 @@ app.get('/api/logout', (req,res) => {
 app.get('/api/products', CartCtrl.getProducts)
 
 app.get('/api/cart', CartCtrl.getCart)
-app.post('/api/cart/:id', CartCtrl.addToCart)
+app.post('/api/cart/:productId', CartCtrl.addToCart)
 app.put('/api/cart/:id', CartCtrl.updateQuantity)
 app.delete('/api/cart/:id', CartCtrl.deleteFromCart)
 app.delete('/api/checkout', CartCtrl.checkout)

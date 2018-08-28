@@ -21,6 +21,7 @@ class Product extends Component {
             <h4>{product.name}</h4>
             <p>${product.price}</p>
             <p>{product.description}</p>
+           <img src={product.picture} alt="product"/>
             <button onClick={() => this.addProductToCart(product.id)}>Add To Cart</button>
             </div>
         )

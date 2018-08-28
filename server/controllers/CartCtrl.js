@@ -25,9 +25,9 @@ module.exports = {
     },
     addToCart: (req, res) => {
         const db = req.app.get('db')
-        const {id} = req.params
-        
-        db.add_product_to_cart([1, id]).then(results => {
+        const {productId} = req.params
+        let {id} = req.session.user
+        db.add_product_to_cart([1, productId, id]).then(results => {
             res.status(200).send(results)
         })
     },
