@@ -1,3 +1,5 @@
+const stripe = require('stripe')(process.env.REACT_APP_STRIPE_SECRET)
+
 module.exports = {
     getProducts: (req, res) => {
         const db = req.app.get('db')
@@ -49,6 +51,7 @@ module.exports = {
     },
     checkout: (req, res) => {
         let db = req.app.get('db')
+        stripe.charges.create(req.body)
         db.checkout().then(results => {
             res.status(200).send(results)
         })

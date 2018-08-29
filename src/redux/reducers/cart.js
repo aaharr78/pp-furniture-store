@@ -63,12 +63,10 @@ export function removeFromCart(id) {
 }
 
 export function checkout() {
-    let cart = axios.delete('/api/checkout').then(results => {
-        return results.data  
-      })
+
     return {
         type: CHECKOUT,
-        payload: cart
+        
     }
 }
 
@@ -84,8 +82,8 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {cart: action.payload})
         case REMOVE_FROM_CART + FULFILLED:
             return Object.assign({}, state, {cart: action.payload})
-        case CHECKOUT + FULFILLED:
-            return Object.assign({}, state, {cart: action.payload})
+        case CHECKOUT:
+            return Object.assign({}, state, {cart: []})
         default: 
         return state
     }

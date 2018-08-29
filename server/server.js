@@ -40,7 +40,7 @@ app.get('/api/cart', CartCtrl.getCart)
 app.post('/api/cart/:productId', CartCtrl.addToCart)
 app.put('/api/cart/:id', CartCtrl.updateQuantity)
 app.delete('/api/cart/:id', CartCtrl.deleteFromCart)
-app.delete('/api/checkout', CartCtrl.checkout)
+app.post('/api/checkout', CartCtrl.checkout)
 
 
 app.listen(port, () => {
