@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
 const bodyParser = require('body-parser');
-
+const path = require('path')
 require('dotenv').config();
 
 const app = express()
@@ -24,6 +24,8 @@ app.use(session({
 
 app.use(bodyParser.json())
 
+app.use( express.static( `${__dirname}/../build` ) )
+
 app.get('/auth/callback', AuthCtrl.auth)
 
 app.get('/api/currentUser', (req,res) => {
@@ -41,6 +43,10 @@ app.post('/api/cart/:productId', CartCtrl.addToCart)
 app.put('/api/cart/:id', CartCtrl.updateQuantity)
 app.delete('/api/cart/:id', CartCtrl.deleteFromCart)
 app.post('/api/checkout', CartCtrl.checkout)
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 
 app.listen(port, () => {
