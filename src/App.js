@@ -4,7 +4,7 @@ import './App.css';
 import { Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getUser } from './redux/reducers/user'
-import { getCart, getProducts} from './redux/reducers/cart'
+import { getCart, getProducts } from './redux/reducers/cart'
 
 import LandingPage from './components/LandingPage'
 import Navbar from './components/Navbar'
@@ -23,13 +23,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Route path="/login" component={Login} />
         <Navbar />
         <Header />
         <LandingPage />
         <Cart />
         <ProductList />
         <div>
-          <Route path="/login" component={Login} />
         </div>
       </div>
 
