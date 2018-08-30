@@ -10,7 +10,7 @@ module.exports = {
         client_secret: process.env.AUTH0_CLIENT_SECRET,
         code,
         grant_type: "authorization_code",
-        redirect_uri: `http://${req.headers.host}/auth/callback`
+        redirect_uri: `${process.env.SERVER_PROTOCOL}://${req.headers.host}/auth/callback`
       }
 
       let auth0domain = `https://${process.env.REACT_APP_AUTH0_DOMAIN}`
