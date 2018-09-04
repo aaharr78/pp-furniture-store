@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import { Route, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getUser } from './redux/reducers/user'
 import { getCart, getProducts } from './redux/reducers/cart'
+import {Route, Switch} from 'react-router-dom'
 
 import LandingPage from './components/LandingPage'
 import Navbar from './components/Navbar'
-import Login from './components/Login'
-import Header from './components/Header'
 import Cart from './components/Cart'
 import ProductList from './components/ProductList'
 
@@ -23,15 +22,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route path="/login" component={Login} />
         <Navbar />
-        <Header />
-        <LandingPage />
-        <Cart />
-        <ProductList />
-        <div>
-        </div>
-      </div>
+        <Switch>
+          <Route exact path='/' component={LandingPage} />
+          <Route path='/cart' component={Cart} />
+          <Route path='/product' component={ProductList}/>
+        </Switch>
+        </ div>
+        
 
 
 

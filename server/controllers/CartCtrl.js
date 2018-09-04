@@ -1,17 +1,17 @@
 const stripe = require('stripe')(process.env.REACT_APP_STRIPE_SECRET)
 
 module.exports = {
-    getProducts: (req, res) => {
+    getProducts: async(req, res) => {
+       try {
         const db = req.app.get('db')
 
-        db.get_products()
-            .then(results => {
-                res.status(200).send(results)
-            })
-            .catch(err => {
-                console.log(err)
+        let product = await db.get_products()
+                res.status(200).send(product)
+            }
+            catch(error) {
+                console.log(error)
                 res.status(500).send('Something done brokeded')
-            })
+            }
     },
     getCart: (req, res) => {
         const db = req.app.get('db')

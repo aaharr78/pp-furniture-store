@@ -1,0 +1,11 @@
+.cart-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 50px 50px 50px;
+}
+.StripeButton {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}

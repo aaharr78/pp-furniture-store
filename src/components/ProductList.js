@@ -1,24 +1,30 @@
 import React from 'react'
 import Product from './Product'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-function ProductsList(props){
+import './CSS/Product.css'
+
+
+function ProductsList(props) {
     let productsList = props.productsList.map(product => {
         return (
-            <Product 
-                product={product} 
+            <Product
+                product={product}
                 key={product.id}
                 updateCart={props.updateCart}
-                 />
+            />
         )
-      })
-      return(
-          <div>
+    })
+    return (
+        <div>
             <h3>Products</h3>
-            {productsList}
-          </div>
-      )
-    }
+            <div className='productlist'>
+
+                {productsList}
+            </div>
+        </div>
+    )
+}
 
 function mapStateToProps(state) {
     return {

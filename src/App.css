@@ -1,10 +1,7 @@
-/* .App {
-  
-  
-} */
+
 .navbar {
-  background-color: red;
-  height: 100px;
+  background-color: #dddddd;
+  height: 80px;
   width: 100%;
   align-items: center;
   display: flex;
@@ -14,15 +11,21 @@
 .nav-title {
   font-size: 2rem;
   text-align: left;
-  color: blue;
+  color: rgb(112, 119, 118);
   margin-right: 1rem;
   padding-left: 20px;
 }
 .nav-items {
-  font-size: 1rem;
   display: flex;
   font-size: 25px;
   line-height: inherit;
-  justify-content: space-around;
   margin-right: 1rem;
+  color: rgb(112, 119, 118);
+}
+.logout {
+  font-size: 25px;
+  background-color: #dddddd;
+  border: none;
+  color: rgb(112, 119, 118);
+  margin-right: 2.6rem;
 }

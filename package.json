@@ -15,9 +15,12 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-stripe-checkout": "^2.6.3",
+    "react-toastify": "^4.3.0",
+    "react-toasts": "^2.0.13",
     "redux": "^4.0.0",
     "redux-promise-middleware": "^5.1.1",
-    "stripe": "^6.8.0"
+    "stripe": "^6.8.0",
+    "toasts": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,6 +46,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "nodemonConfig": {
+    "ext": "js, sql",
+    "ignore": [
+      "src/*",
+      "public/*"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/aaharr78/pp-furniture-store/issues"
   }
